@@ -7,7 +7,7 @@
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
-		<meta http-equiv="refresh" content="5" url="<?= $_SERVER["HTTP_REFERER"];?>inc/conversation.php">
+		<!--<meta http-equiv="refresh" content="5" url="<?= $_SERVER["HTTP_REFERER"];?>inc/conversation.php">-->
 	</head>
 	<body>
 		<ul class="inner-content">
@@ -15,7 +15,7 @@
 
 		while ($row = $req -> fetch()) : ?>
 		
-			<li>
+			<li data-id="<?= $row['id']; ?>">
 				<strong><?= $row['user']; ?></strong>
 				[<?= $row['hour']; ?>:<?= $row['minutes']; ?>]
 				<?= $row['content']; ?>
@@ -24,7 +24,7 @@
 		<?php endwhile; ?>
 
 		</ul>
-	</body>
+		
 	</html>
 
 	
