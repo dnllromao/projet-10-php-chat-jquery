@@ -2,17 +2,13 @@
 
 const btnSubmit = $('input[type=submit]');
 const input = $('textarea[name=msg]');
-const ully = $('.inner-content');
-console.log(ully);
 
 
+let refresh = function () {
+	let lastID = $('.inner-content li').last();
+	let test = lastID.data('id');
+	console.log(test);
 
-
-let refresh = function (lastID) {
-	console.log('alors');
-	//let lastID = $('ul');
-	//console.log(lastID.css('background', 'red'));
-	lastID.css('background', 'red')
 	// $.ajax({ 
 	// 	url: "./api.php", 
 	// 	type: 'POST',
@@ -22,6 +18,9 @@ let refresh = function (lastID) {
 	//     }
 	// });
 }
+
+refresh();
+
 
 btnSubmit.click(function(event) {
 	event.preventDefault();
@@ -35,7 +34,7 @@ btnSubmit.click(function(event) {
 		data: {msg: msg},
 		success: function(data){
 			console.log(data);
-			refresh(l);
+			
 	    }
 	});
 });

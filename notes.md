@@ -5,3 +5,6 @@ HTML5 WebSockets
 https://www.html5rocks.com/en/tutorials/websockets/basics/
 
 What is the difference btw long polling & heartbeat ???
+
+Comment connecter deux iframe avec le parent 
+https://stackoverflow.com/questions/7027799/access-elements-of-parent-window-from-iframe
