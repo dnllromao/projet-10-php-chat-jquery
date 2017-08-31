@@ -21,4 +21,7 @@ input, textarea {
 textarea, iframe {
   width: 100%; }
 
-/*# sourceMappingURL=style.css.map */
+.inner-content {
+  height: 70vh;
+  overflow-y: scroll;
+}

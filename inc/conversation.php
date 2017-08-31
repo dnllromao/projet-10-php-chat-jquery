@@ -7,7 +7,7 @@
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
-		<!--<meta http-equiv="refresh" content="5" url="<?= $_SERVER["HTTP_REFERER"];?>inc/conversation.php">-->
+		<meta http-equiv="refresh" content="5" url="<?= $_SERVER["HTTP_REFERER"];?>inc/conversation.php">
 	</head>
 	<body>
 		<ul class="inner-content">
@@ -24,10 +24,7 @@
 		<?php endwhile; ?>
 
 		</ul>
-		
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="../assets/js/ajax.js"></script>
-</body>
-</html>
+	</body>
+	</html>
 
 	

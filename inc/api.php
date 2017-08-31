@@ -26,11 +26,28 @@
 
 	endif;
 
-	if ( !empty($_POST) && !empty($_POST['action']) && $_POST['action'] == 'refresh') :
+
+	if ( !empty($_POST) && !empty($_POST['action']) && $_POST['action'] == 'load') :
+	
 
 	$req = $db -> query("SELECT * FROM (SELECT msgs.id AS id, msgs.content AS content, HOUR(msgs.moment) AS hour, MINUTE(msgs.moment) AS minutes, users.pseudo AS user FROM msgs INNER JOIN users ON msgs.user_id = users.id ORDER BY msgs.id DESC LIMIT 10) AS new ORDER BY id ASC");
 
-	$result = $req->fetchAll();
+	$result = $req->fetchAll(PDO::FETCH_ASSOC);
+
+	echo json_encode($result);
+
+	endif;
+
+
+	if ( !empty($_POST) && !empty($_POST['lastID']) ) :
+
+	$req = $db -> prepare("SELECT msgs.id AS id, msgs.content AS content, HOUR(msgs.moment) AS hour, MINUTE(msgs.moment) AS minutes, users.pseudo AS user FROM msgs INNER JOIN users ON msgs.user_id = users.id WHERE msgs.id > :lastID");
+
+	$res = $req -> execute(array(
+			'lastID' => $_POST['lastID']
+	));
+
+	$result = $req->fetchAll(PDO::FETCH_ASSOC);
 
 	echo json_encode($result);
 

@@ -47,13 +47,14 @@
 				<input type="submit" value="signout" name="action">
 			</form>
 		</div>
-		<div class="chat">
-			<iframe src="inc/conversation.php"></iframe>
+		<div id="chat">
+			<iframe src="inc/conversation.php"></iframe> 
 			<iframe src="inc/input.php" id="input" frameBorder="0"></iframe>
 		</div>
 
 	<?php endif; ?>
 	</div>
-	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="assets/js/ajax.js"></script>
 </body>
 </html>
