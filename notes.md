@@ -17,3 +17,5 @@ UnDERSTAND HTTP HEADERS!!!!!
 Correction:
 - login par email
 - relire session-destroy()
+- implement online/offline with heartbyte
+-
