@@ -25,3 +25,13 @@ textarea, iframe {
   height: 70vh;
   overflow-y: scroll;
 }
+
+.inner-content ul {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin:0;
+  box-sizing: border-box;
+  padding-bottom: 16px;
+}

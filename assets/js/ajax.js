@@ -4,9 +4,9 @@ $('iframe').hide();
 
 // Start building interface
 const container = $('#chat');
-const chat = $('<ul class="inner-content"></ul>');
-// const list = $('<ul></ul>');
-// chat.append(list);
+const chat = $('<div class="inner-content"></div>');
+const list = $('<ul></ul>');
+chat.append(list);
 container.append(chat);
 const form = $('<form></form>');
 const input = $('<textarea rows="5"></textarea>');
@@ -28,10 +28,13 @@ const load = function() {
 }
 
 const poll = function () {
-	setTimeout(refresh, 3000);
+	chat.scrollTop(chat[0].scrollHeight);
+	//setTimeout(refresh, 3000);
 }
 
 console.log(chat);
+console.log(chat[0].scrollHeight);
+
 // let height_of_chat = $('.chat_zone')[0].scrollHeight;
 
 // let height_of_chat = $('.chat_zone')[0].scrollHeight;
@@ -45,13 +48,13 @@ load();
 const addToChat = function (msgs) {
 
 	$.each(msgs, function(index, msg) {
-		let post = $('<li data-id="'+msg.id+'"><strong>'+msg.user+'</strong>['+msg.hour+':'+msg.minutes+']'+msg.content+'</li>');
-		chat.append(post);
+		let post = $('<li data-id="'+msg.id+'"><strong>'+msg.user+'</strong> ['+msg.hour+':'+msg.minutes+'] '+msg.content+'</li>');
+		list.append(post);
 	});
 }
 
 let refresh = function () {
-	let lastID = chat.children('li').last().data('id');
+	let lastID = list.children('li').last().data('id');
 	console.log(lastID);
 
 	$.ajax({ 
