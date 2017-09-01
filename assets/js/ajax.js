@@ -28,12 +28,13 @@ const load = function() {
 }
 
 const poll = function () {
+
 	chat.scrollTop(chat[0].scrollHeight);
 	//setTimeout(refresh, 3000);
 }
 
 console.log(chat);
-console.log(chat[0].scrollHeight);
+console.log(chat[0]);
 
 // let height_of_chat = $('.chat_zone')[0].scrollHeight;
 
